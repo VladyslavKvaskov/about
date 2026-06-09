@@ -1,4 +1,4 @@
-import { Box, IconButton, IconButtonOwnProps, Tooltip } from "@mui/material";
+import { Box, IconButton, IconButtonOwnProps } from "@mui/material";
 import { useData } from "../providers/data-provider";
 import { GitHub, LinkedIn, Telegram, WhatsApp } from "@mui/icons-material";
 import { AppName } from "@/enums";
@@ -39,11 +39,20 @@ const getColor = (appName: AppName): IconButtonOwnProps["color"] => {
   }
 };
 
-export const Socials = ({ path }: { path: string }) => {
+export const Socials = ({
+  path,
+  className,
+}: {
+  path: string;
+  className?: string;
+}) => {
   const data = useData();
 
   return (
-    <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+    <Box
+      sx={{ display: "flex", gap: 1, alignItems: "center" }}
+      className={className}
+    >
       {get(data, path).map(
         ({ name, link }: { name: AppName; link: string }) => (
           <IconButton

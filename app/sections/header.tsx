@@ -117,13 +117,9 @@ export const Header = () => {
             fontSize: "large",
           }}
         />
-        <Box sx={{ display: "flex", gap: 3, ml: "auto" }}>
-          <Socials path="profile.contacts" />
-          <Button
-            variant="contained"
-            href={profile.contacts[0].link}
-            className="mobile-hidden"
-          >
+        <Box sx={{ display: "flex", gap: 3, ml: "auto", alignItems: "center" }}>
+          <Socials path="profile.contacts" className="mobile-hidden" />
+          <Button variant="contained" href={profile.contacts[0].link}>
             Get in touch
           </Button>
           <IconButton onClick={toggleTheme}>
@@ -233,13 +229,11 @@ export const Header = () => {
                   display: "flex",
                   gap: 3,
                   mt: 3,
+                  alignItems: "center",
+                  flexWrap: "wrap",
                 }}
               >
-                <Button
-                  variant="contained"
-                  href={profile.contacts[0].link}
-                  className="mobile-hidden"
-                >
+                <Button variant="contained" href={profile.contacts[0].link}>
                   Get in touch
                 </Button>
                 <Socials path="profile.contacts" />
